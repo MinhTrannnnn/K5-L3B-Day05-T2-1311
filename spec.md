@@ -58,7 +58,7 @@ Bốn lớp: **① nguồn sự thật · ② mơ hồ/thiếu thông tin · ③
 
 ## §3. Khi AI sai
 
-> Phương án thiết kế trong bài dùng hai ca K-A/K-B ở §2. Prototype thể hiện các vị trí 1–5; bảng §3.4 và ảnh §5 đối chiếu từng vị trí. Lịch sử trao đổi và phê duyệt thực tế của nhóm chưa được ghi nhận.
+> Phương án thiết kế trong bài dùng hai ca K-A/K-B ở §2. Prototype đã thể hiện các vị trí 1–5; bảng §3.4 và ảnh §5 đối chiếu từng vị trí. Lịch sử trao đổi và phê duyệt thực tế của nhóm chưa được ghi nhận.
 
 ### 3.1. Hai ca được phân tích sâu trong bản thiết kế
 
@@ -271,7 +271,7 @@ Ba tiêu chí sau được chấm trên **prototype theo kịch bản**; không 
 | T2 — Có căn cứ và đường sửa/chuyển người | Pass khi phản hồi có mã nguồn tồn tại, mở được đúng đoạn (hoặc nói không tìm thấy), có đường sửa câu hỏi/bản nháp và lựa chọn TA; không bịa nguồn hoặc giờ trả lời. | **Pass:** §3.2, hạn từ B; có sửa câu hỏi và nháp gửi TA. | **Pass:** mở đúng §3.3, hiện cảnh báo và cho bổ sung câu hỏi TA. |
 | T3 — Phê duyệt và trạng thái đúng kết quả | Pass khi hủy nháp/lỗi gửi không tạo yêu cầu, gửi thành công mới hiện hàng chờ; xuất bản cần TA duyệt đúng nội dung, sửa nội dung hủy duyệt. | **Pass:** nháp bỏ không gửi, lỗi không tạo yêu cầu; học viên xác nhận mới tạo hàng chờ; không cho xuất bản bài mở. | **Pass:** cùng cổng xác nhận gửi; trước duyệt nút đăng bị khóa, sửa nội dung mất duyệt, duyệt mới đăng; gỡ FAQ không hứa thu hồi kiến thức. |
 
-**Trạng thái kiểm tra:** Bộ kiểm tra và kết quả trước đây đã được chuyển vào `backup/mai-danh-hieu/`. Các nhận định Pass trong bảng phản ánh bản mẫu đã lưu, không phải bản làm việc hiện tại.
+**Bằng chứng kiểm tra:** [checks/browser-check.mjs](checks/browser-check.mjs) chạy Chrome headless qua DevTools, không dùng thư viện ngoài. Kiểm tra luồng bình thường, hai ca khó, nguồn không có, hạn nộp/Excel, buổi chưa mở, bài đã công bố đáp án, tự chê bản thân, ngoại lai, yêu cầu bỏ qua quy tắc, lỗi gửi, sửa/duyệt/gỡ FAQ và màn hình di động 390px. Kết quả thực tế ghi tại [checks/RESULTS.md](checks/RESULTS.md). Hai ảnh §5 được xuất từ các trạng thái kiểm tra thật của giao diện.
 
 **Lỗi/giới hạn còn lại:**
 
