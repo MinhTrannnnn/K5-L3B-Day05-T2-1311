@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prototype LAB5 T2: trợ lý học bài có nguồn, hỗ trợ đúng giới hạn và chuyển TA có xác nhận.">
+  <title>Khoảng Học — Trợ lý học bài · LAB5 T2</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="demo-strip"><span>LAB5 / T2 · Prototype tương tác · Dữ liệu dựng, phản hồi theo kịch bản</span><span>Thời điểm tình huống: 13.11.2026 · 22:30</span></div>
+  <header class="topbar">
+    <a href="#" class="brand" aria-label="Khoảng Học, trang đầu"><span class="brand-mark">k<span>↗</span></span><span>khoảng học<small>Mỗi câu hỏi, một bước hiểu hơn.</small></span></a>
+    <nav class="view-switch" aria-label="Chọn góc nhìn">
+      <button id="learner-tab" class="active" aria-selected="true">Học viên</button>
+      <button id="ta-tab" aria-selected="false">Góc nhìn TA <span id="queue-count" class="count">0</span></button>
+    </nav>
+    <div class="course-label">NHẬP MÔN PHÂN TÍCH DỮ LIỆU<span>Buổi 03 / Thống kê mô tả</span></div>
+  </header>
+
+  <main id="learner-view" class="workspace">
+    <aside class="sidebar">
+      <p class="eyebrow">KHÔNG GIAN HỌC TẬP</p>
+      <h1>Học chậm lại.<br>Hiểu sâu hơn.</h1>
+      <p class="muted">Một trợ lý AI giúp bạn tự tìm ra cách làm, theo tài liệu của khóa.</p>
+      <div class="side-divider"></div>
+      <p class="eyebrow">TÀI LIỆU BUỔI 3</p>
+      <nav id="materials" class="materials" aria-label="Các mục tài liệu"></nav>
+      <div class="ta-hours"><span class="dot"></span><strong>TA đã hết giờ trực</strong><p>Giờ trực: 08:00–22:00.<br>Ca tiếp theo dự kiến: 08:00 ngày 14/11, không phải giờ hẹn trả lời.</p></div>
+      <p class="sidebar-note">Chỉ dùng tài liệu đã mở.<br>Chỗ chưa chắc, mình cùng kiểm tra.</p>
+    </aside>
+
+    <section class="conversation" aria-label="Trò chuyện với trợ lý">
+      <div class="section-top"><span class="eyebrow">TRỢ LÝ HỌC BÀI</span><span class="availability">AI · có giới hạn hỗ trợ</span></div>
+      <div id="assignment-banner" class="assignment"><span class="annotation">1</span><div><strong>Bài tập 3 đang mở</strong><p>Hạn nộp 13/11/2026 · 23:59 <span>Chỉ gợi ý bước đầu</span></p></div><span class="assignment-icon" aria-hidden="true">↗</span></div>
+      <div class="intro"><span class="eyebrow">CHÀO BUỔI TỐI</span><h2>Bạn đang vướng ở đâu?</h2><p>Mình giải thích kèm nguồn. Với bài đang mở, mình không đưa hay xác nhận đáp số, không viết nhận xét hộ.</p></div>
+      <div class="scenario-label">Thử một tình huống</div>
+      <div class="scenario-buttons">
+        <button data-scenario="open">Xin xác nhận bài 3</button><button data-scenario="source">Tài liệu có câu sai</button><button data-scenario="concept">Hỏi khái niệm</button><button data-scenario="missing">Nguồn không tồn tại</button>
+      </div>
+      <div id="messages" class="messages" role="log" aria-label="Nội dung hội thoại" aria-live="polite"></div>
+      <form id="chat-form" class="composer"><label for="question" class="sr-only">Câu hỏi của bạn</label><textarea id="question" rows="2" maxlength="2000" placeholder="Hỏi bằng lời của bạn… Enter để gửi, Shift + Enter để xuống dòng."></textarea><div class="composer-bottom"><span>Nguồn trong khóa · Không đánh giá năng lực của bạn</span><button type="submit" class="send-button" aria-label="Gửi câu hỏi">Gửi <span aria-hidden="true">↗</span></button></div></form>
+      <p class="privacy-note">Nội dung gửi TA cần bạn xem trước và xác nhận. Mọi thao tác trong bản mẫu chỉ diễn ra trên trình duyệt này.</p>
+    </section>
+
+    <aside class="evidence-panel" aria-label="Căn cứ và quyền kiểm soát">
+      <div class="evidence-heading"><span class="eyebrow">HỌC CÓ CĂN CỨ</span><span aria-hidden="true">✳</span></div>
+      <section id="source-panel" class="source-card"><span class="annotation">2</span><p class="eyebrow">NGUỒN TRỢ LÝ DỰA VÀO</p><div id="source-content"></div></section>
+      <section id="warning-panel" class="warning-card" hidden><span class="annotation">4</span><strong>Nội dung cần xác minh</strong><p id="warning-text"></p><button id="report-source" class="text-button">Bổ sung chỗ chưa hợp lý →</button></section>
+      <section class="control-card"><p class="eyebrow">BẠN GIỮ QUYỀN QUYẾT ĐỊNH</p><h3>Soạn trước.<br>Bạn duyệt rồi mới gửi.</h3><p>TA chỉ nhận câu hỏi khi bạn xác nhận. Ngoài giờ trực, yêu cầu nằm trong hàng chờ.</p><button id="draft-ta" class="primary full">Soạn câu hỏi gửi TA <span>↗</span></button><p id="ticket-status" class="status-text" role="status">Chưa có câu hỏi nào được gửi.</p><p id="ta-reply" class="status-text" hidden></p></section>
+      <section class="faq-status"><span class="annotation">5</span><strong>FAQ của lớp</strong><p id="faq-status-text">AI không tự xuất bản. Mọi nội dung cần TA duyệt trước.</p><button id="draft-faq" class="text-button" disabled>Đề xuất FAQ sau khi có câu phù hợp</button></section>
+    </aside>
+  </main>
+
+  <main id="ta-view" class="ta-workspace" hidden>
+    <div class="ta-title"><div><p class="eyebrow">GÓC NHÌN TA · MÔ PHỎNG</p><h1>Một câu hỏi cần người thật.</h1><p>Kiểm tra nguồn, xem đúng nội dung rồi mới duyệt.</p></div><span class="pill">Không có kết nối TA thật</span></div>
+    <div class="ta-grid"><section class="queue-column"><div class="panel-title"><h2>Hàng chờ</h2><span id="ta-count">0 yêu cầu</span></div><div id="queue-list"></div></section><section id="review-panel" class="review-panel" aria-label="Chi tiết yêu cầu"></section><aside class="published-panel"><p class="eyebrow">FAQ CỦA LỚP · MÔ PHỎNG</p><h2>Đã được duyệt</h2><div id="published-list"></div></aside></div>
+  </main>
+
+  <footer class="footer"><span>Khoảng Học / Nhóm 1311 · LAB5 T2</span><details><summary>Điều khiển bản mẫu</summary><div><label><input id="simulate-error" type="checkbox"> Mô phỏng lỗi gửi TA</label><button id="reset-demo" class="text-button">Xóa dữ liệu bản mẫu</button><span>Không gọi AI, không gửi dữ liệu ra ngoài; hai góc nhìn cùng dùng trạng thái cục bộ.</span></div></details></footer>
+
+  <dialog id="draft-dialog" aria-labelledby="draft-title"><form id="draft-form"><div class="dialog-top"><span class="eyebrow">BẠN DUYỆT TRƯỚC KHI GỬI</span><button id="close-dialog" type="button" class="icon-button" aria-label="Đóng bản nháp">×</button></div><h2 id="draft-title"><span class="annotation">3</span> Xem trước câu hỏi gửi TA</h2><p class="dialog-copy">Bạn có thể sửa hoặc bỏ chi tiết bài làm. Xác nhận chỉ gửi nội dung dưới đây.</p><label for="draft-text">Nội dung gửi</label><textarea id="draft-text" rows="5" maxlength="3000" required></textarea><div id="draft-meta" class="draft-meta"></div><div class="deadline-warning"><strong>TA hiện không trực.</strong><p>Ca tiếp theo dự kiến: 08:00 ngày 14/11, chưa bảo đảm giờ phản hồi. Hạn bài vẫn là 23:59 ngày 13/11.</p></div><p id="draft-error" class="error-text" role="alert"></p><div class="dialog-actions"><button id="cancel-draft" type="button" class="secondary">Bỏ bản nháp</button><button id="confirm-draft" type="submit" class="primary">Xác nhận gửi vào hàng chờ</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
