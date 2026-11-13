@@ -2,11 +2,13 @@
 
 **Lớp:** L3B · **Bàn / zone:** Chưa cung cấp · **Track:** T2
 
-| Họ và Tên | Mã Học Viên | Việc đã làm |
+| Họ và Tên | Mã Học Viên | Phần phụ trách / việc đã làm cần xác nhận |
 |---|---|---|
-| [Thành viên 1] | [Mã học viên] | [Việc cụ thể] |
-| [Thành viên 2] | [Mã học viên] | [Việc cụ thể] |
-| [Thành viên 3] | [Mã học viên] | [Việc cụ thể] |
+| Trần Quang Minh | 2A202603929 | Phụ trách §3–§4: UX cho K-A/K-B, câu phản hồi AI, phân loại lỗi, nguyên tắc HAX, mức tự chủ cho bốn tool và lập luận theo hậu quả khi sai; trình bày các quyết định UX và quyền tự chủ khi demo. |
+| Nguyễn Hải Quang | 2A202603936 | Phụ trách §1–§2 và §6: phạm vi, bảng 12 kịch bản, lý do chọn hai ca đắt nhất, ba tiêu chí Pass/Fail; rà soát kết quả kiểm tra theo tiêu chí; trình bày bài toán, rủi ro và tiêu chí đánh giá khi demo. |
+| Mai Danh Hiếu | 2A202603948 | Phụ trách §5 và prototype/: hai màn hình học viên/TA, tương tác gửi/duyệt FAQ, ảnh đánh số, hướng dẫn chạy và bộ kiểm tra trình duyệt; vận hành prototype và ghi nhận ca lạ tại §7 khi demo. |
+
+**Ghi nhận đóng góp:** bảng trên phân bổ trách nhiệm rà soát và hoàn thiện bản nháp được xây dựng với AI hỗ trợ. Mỗi thành viên cần thực hiện, hiểu và xác nhận phần việc của mình trước khi ghi nhận là việc đã làm; bảng chưa xác nhận cả ba đã hoàn tất các phần được giao. Cả nhóm cùng xem lại hai ca rủi ro chính, mức tự chủ và thử demo để các phần thống nhất.
 
 > Với mỗi quyết định: ghi các phương án đã cân nhắc, phương án chọn, lý do chọn và lý do loại phương án còn lại. Dẫn chứng bằng tool, dữ liệu trong track T2 hoặc vị trí cụ thể trên prototype.
 
@@ -193,9 +195,9 @@ Không bắt buộc phải dùng đủ cả ba mức. Bốn tool hiện được
 
 | Thành viên | Mức chọn ban đầu cho `goi_y_bai_tap` | Lý do và ca rủi ro được viện dẫn | Sau trao đổi có đổi ý không, vì sao? |
 |---|---|---|---|
-| Thành viên 1 | Chưa ghi nhận | Chưa ghi nhận | Chưa ghi nhận |
-| Thành viên 2 | Chưa ghi nhận | Chưa ghi nhận | Chưa ghi nhận |
-| Thành viên 3 | Chưa ghi nhận | Chưa ghi nhận | Chưa ghi nhận |
+| Trần Quang Minh | Chưa ghi nhận | Chưa ghi nhận | Chưa ghi nhận |
+| Nguyễn Hải Quang | Chưa ghi nhận | Chưa ghi nhận | Chưa ghi nhận |
+| Mai Danh Hiếu | Chưa ghi nhận | Chưa ghi nhận | Chưa ghi nhận |
 
 Để chốt, đối chiếu từng lựa chọn với K-A (lộ đáp án, không thể thu hồi), K-B (nguồn cần xác minh) và K-C (không nên chờ vô ích). Chỉ ghi nhóm đã thống nhất sau khi ba người thực sự trao đổi; nếu thay mức hoặc điều kiện, cập nhật đồng thời bảng §4.1, lời hứa §4.5 và hành vi prototype. **Trạng thái hiện tại:** bản thiết kế dùng phương án tự làm có giới hạn; chưa có biên bản xác nhận của ba thành viên.
 
@@ -280,6 +282,8 @@ Ba tiêu chí sau được chấm trên **prototype theo kịch bản**; không 
 - Ẩn phản hồi/gỡ FAQ không thu hồi được nội dung đã đọc. Nếu sai đã xảy ra, vẫn cần quy trình đính chính do người phụ trách thực hiện.
 
 ## §7. Demo
+
+**Phần trình bày dự kiến:** Nguyễn Hải Quang giới thiệu lát cắt, ca rủi ro và tiêu chí đánh giá; Trần Quang Minh giải thích UX, HAX và mức tự chủ; Mai Danh Hiếu thao tác prototype, minh họa trạng thái gửi/duyệt và ghi lại ca lạ. Cả ba cùng trả lời về phần mình phụ trách, đồng thời hiểu luồng chung. Đây là phân công chuẩn bị, chưa phải ghi nhận demo đã diễn ra.
 
 **Kịch bản trình bày khoảng 4 phút:**
 

@@ -12,4 +12,4 @@ Hai ca chính: học viên xin xác nhận đáp số bài đang mở và tài l
 
 Mọi dữ liệu đều dựng theo track T2. Phản hồi được viết sẵn và chọn theo từ khóa; không gọi AI thật, không cần API key hoặc backend, không liên hệ TA thật. Hai góc nhìn chia sẻ trạng thái trên cùng trình duyệt. Thời điểm tình huống cố định ở 22:30 ngày 13/11/2026, không phải đồng hồ hiện tại.
 
-Thông tin họ tên, mã học viên và việc đã làm để người nộp tự điền ở đầu `spec.md`. Kết quả demo thực tế và thảo luận nhóm cần cập nhật sau khi thực hiện, trước khi coi bài là hoàn tất để nộp.
+Danh sách Trần Quang Minh, Nguyễn Hải Quang, Mai Danh Hiếu, mã học viên và phần phụ trách đã ghi ở đầu `spec.md`. Các thành viên cần rà soát, thực hiện và xác nhận đóng góp thực tế; kết quả demo và thảo luận nhóm cập nhật sau khi thực hiện.
