@@ -7,6 +7,6 @@ Prototype trợ lý học bài cho học viên khóa “Nhập môn phân tích 
 
 Hai ca chính trong thiết kế: học viên xin xác nhận đáp số bài đang mở và tài liệu có câu sai được đề nghị đưa lên FAQ cả lớp.
 
-Dữ liệu tình huống đều dựng theo track T2. Prototype và bộ kiểm tra trước đây được lưu trong `backup/mai-danh-hieu/`; bản làm việc hiện tại chỉ giữ tài liệu thiết kế.
+Dữ liệu tình huống đều dựng theo track T2. [Prototype](prototype/index.html) và [hướng dẫn chạy](prototype/README.md) đã được khôi phục từ bản sao lưu. Bộ kiểm tra trình duyệt hiện vẫn chỉ có trong `backup/mai-danh-hieu/checks/`.
 
 Danh sách Trần Quang Minh, Nguyễn Hải Quang, Mai Danh Hiếu, mã học viên và phần phụ trách đã ghi ở đầu `spec.md`. Các thành viên cần rà soát, thực hiện và xác nhận đóng góp thực tế; kết quả demo và thảo luận nhóm cập nhật sau khi thực hiện.

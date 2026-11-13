@@ -58,7 +58,7 @@ Bốn lớp: **① nguồn sự thật · ② mơ hồ/thiếu thông tin · ③
 
 ## §3. Khi AI sai
 
-> Phương án thiết kế trong bài dùng hai ca K-A/K-B ở §2. Bản prototype và ảnh đối chiếu trước đây đã được chuyển vào bản sao lưu. Lịch sử trao đổi và phê duyệt thực tế của nhóm chưa được ghi nhận.
+> Phương án thiết kế trong bài dùng hai ca K-A/K-B ở §2. Prototype thể hiện các vị trí 1–5; bảng §3.4 và ảnh §5 đối chiếu từng vị trí. Lịch sử trao đổi và phê duyệt thực tế của nhóm chưa được ghi nhận.
 
 ### 3.1. Hai ca được phân tích sâu trong bản thiết kế
 
@@ -146,7 +146,7 @@ Nếu TA xác nhận nguồn sai, TA xử lý việc sửa nguồn và duyệt n
 | **G11 — Giải thích vì sao** | P2: thẻ nguồn; P5: lý do chưa đăng FAQ | Bấm được để xem đúng mã mục và nguyên văn; giải thích giới hạn bài đang mở hoặc nguy cơ lan câu sai. |
 | **G9 — Sửa dễ dàng** | P3: bản xem trước gửi TA; P4: bổ sung báo lỗi | Học viên sửa hoặc bỏ nội dung trước khi gửi, bổ sung chỗ AI hiểu sai; việc sửa câu hỏi không mở khóa đáp án hoặc quyền đăng FAQ. |
 
-P1–P5 tương ứng các vị trí trên bản prototype đã lưu. Nút “Ẩn phản hồi” có thể hoàn tác bằng “Hiện lại”; thao tác này chỉ đổi cách hiển thị, không xóa kiến thức đã đọc. Mở/đóng nguồn là thao tác đọc có thể đảo lại; không quảng bá việc ẩn như thu hồi đáp án đã lộ.
+P1–P5 tương ứng huy hiệu tròn số 1–5 trên giao diện và hai ảnh ở §5. Nút “Ẩn phản hồi” có thể hoàn tác bằng “Hiện lại”; thao tác này chỉ đổi cách hiển thị, không xóa kiến thức đã đọc. Mở/đóng nguồn là thao tác đọc có thể đảo lại; không quảng bá việc ẩn như thu hồi đáp án đã lộ.
 
 ### 3.5. Phân biệt lỗi để chọn cách nói và cách sửa
 
@@ -221,9 +221,49 @@ Không bắt buộc phải dùng đủ cả ba mức. Bốn tool hiện được
 
 Lời hứa này tương ứng với quyền thực tế: AI hỗ trợ học ngay trong phạm vi nguồn và giới hạn bài tập, còn xác minh học liệu và xuất bản cho lớp cần người phụ trách.
 
+## §5. Prototype
+
+**Sản phẩm:** [Mở prototype Khoảng Học](prototype/index.html). Hai màn hình trong một trang: **Học viên** và **Góc nhìn TA**. Dùng HTML/CSS/JavaScript thuần, chạy trực tiếp bằng trình duyệt, không đăng nhập, không backend, không cần cài thư viện.
+
+**Cách mở:** tải/clone repo rồi mở `prototype/index.html`; GitHub chỉ hiện mã nguồn khi bấm file HTML trên web. Hướng dẫn chi tiết và kịch bản demo nằm trong [prototype/README.md](prototype/README.md).
+
+**Phần mô phỏng:** phản hồi cố định theo nhánh/từ khóa, tra dữ liệu A/B nhúng trong mã, hàng chờ và FAQ lưu bằng `localStorage` trên trình duyệt. Không có lời gọi AI thật, không có TA thật nhận tin; góc nhìn TA là thao tác đóng vai trên cùng trình duyệt. Không đăng ký điểm bonus lời gọi AI thật.
+
+**Luồng chính đã dựng:**
+
+1. Chọn “Xin xác nhận bài 3” → chỉ nhận gợi ý bước đầu và nguồn §3.2; có sửa câu hỏi, ẩn/hiện lại phản hồi.
+2. Chọn “Tài liệu có câu sai” → hiện đoạn §3.3 cần xác minh, không cho học viên tự đăng FAQ.
+3. Soạn câu hỏi gửi TA → sửa bản nháp → bỏ hoặc xác nhận. Có mô phỏng lỗi gửi để kiểm tra không báo thành công giả.
+4. Đổi sang “Góc nhìn TA” → xem đúng câu hỏi đã gửi và nguồn → nhập phản hồi → xác nhận đã kiểm tra phiên bản → lưu phản hồi hoặc duyệt/đăng FAQ nếu đủ điều kiện. Sửa nội dung làm mất phê duyệt cũ.
+5. Học viên xem được phản hồi TA khi quay lại màn hình; TA có thể gỡ FAQ, kèm thông báo không thu hồi được nội dung đã đọc.
+
+### 5.1. Hai ảnh có đánh số
+
+![Ảnh 1 — Học viên xem giới hạn bài đang mở, căn cứ và sửa bản nháp trước khi gửi TA](prototype/screenshots/01-hoc-vien-duyet-cau-hoi.png)
+
+![Ảnh 2 — TA xem nguồn đáng ngờ và nội dung phải kiểm tra trước khi duyệt FAQ](prototype/screenshots/02-ta-kiem-tra-nguon-va-duyet-faq.png)
+
+| Số trên ảnh | Thể hiện gì | Nguyên tắc | Mức tự chủ |
+|---|---|---|---|
+| **1**, ảnh 1 | Banner Bài tập 3 đang mở, hạn 23:59, chỉ gợi ý bước đầu | G10: giới hạn rõ phạm vi hỗ trợ | Gợi ý tự làm trong giới hạn; xác nhận đáp số bị cấm |
+| **2**, cả hai ảnh | Thẻ nguồn đúng mã mục, mở xem được nguyên văn; ảnh 2 mở §3.3 để nhìn thấy câu đáng ngờ | G11: giải thích căn cứ | Tra cứu tự làm; đọc được nguồn không đồng nghĩa được xuất bản |
+| **3**, ảnh 1 | Bản nháp chỉnh sửa được, nút bỏ/xác nhận, cảnh báo TA ngoài giờ | G9: sửa dễ; G11: lý do chưa hứa thời gian phản hồi | `chuyen_TA` cần học viên duyệt |
+| **4**, ảnh 2 | Cảnh báo nguồn đang tranh chấp ở §3.3; học viên cũng thấy cảnh báo trước khi gửi | G10: dừng khẳng định chỗ chưa chắc | Không tự xác nhận câu sai; chuyển người xác minh |
+| **5**, ảnh 2 | Nút duyệt/đăng FAQ bị khóa khi chưa chọn xác nhận kiểm tra, dù đã có bản nháp | G11: cho biết điều kiện xuất bản | `dang_FAQ` cần TA duyệt đúng phiên bản |
+
+### 5.2. Các lựa chọn giao diện và phương án loại
+
+| Quyết định | Lý do chọn | Cách khác đã cân nhắc và loại |
+|---|---|---|
+| Thẻ nguồn mở xem nguyên văn + nhãn trạng thái | Học viên tự kiểm được nội dung; thể hiện cả trường hợp nguồn có vấn đề | Phần trăm “AI chắc 95%” không có cơ sở hiệu chuẩn; chỉ ghi “có nguồn” che mất nguy cơ nguồn sai |
+| Xem trước câu hỏi bằng hộp thoại, chỉ gửi sau một nút xác nhận rõ | Tách ý định nhờ hỗ trợ khỏi việc chia sẻ nội dung; bỏ nháp không có tác dụng gửi | Tự chuyển ngay khi người dùng nhắc TA dễ gửi thừa và báo thành công quá sớm |
+| Dùng một bảng TA riêng với bản nháp, checkbox duyệt và nút đăng | Tách quyền học viên/TA, buộc người duyệt thấy nguyên văn sắp xuất bản | Một nút “đăng cho lớp” ngay trong chat không có bước xác minh; tự đăng khi hết thời gian chờ không có người chịu trách nhiệm |
+| Tách nhãn trạng thái bài, giờ TA và giờ hẹn trả lời | Học viên nhận biết chờ TA có thể qua hạn nộp; lịch trực không bị hiểu thành cam kết | Chỉ ghi “đang chuyển chuyên gia” tạo kỳ vọng được giải quyết ngay |
+| Dữ liệu cục bộ, hai màn hình, không gọi AI thật | Đủ kiểm chứng các quyết định UX/quyền tự chủ, chạy được offline khi demo | Thêm model/API trong bài này tăng việc cấu hình, vẫn không thay được cổng xác nhận và bằng chứng nguồn |
+
 ## §6. Tốt là gì
 
-Ba tiêu chí sau là khung đánh giá theo kịch bản; prototype đã được chuyển vào bản sao lưu và hiện không có trong bản làm việc.
+Ba tiêu chí sau được chấm trên **prototype theo kịch bản**; không suy rộng thành đánh giá một model AI.
 
 | Mã | Tiêu chí Pass/Fail | K-A | K-B |
 |---|---|---|---|
