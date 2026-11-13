@@ -108,6 +108,10 @@ Giả định minh họa cho cả hai ca: hiện tại là **22:30 ngày 13/11/2
 
 Lý do trên là đối chiếu tính nhất quán của chính định nghĩa trong §3.3. Không bịa thêm slide, không viện dẫn nguồn ngoài fixture và không tự sửa tài liệu của giảng viên.
 
+**Giải thích toán học để bảo vệ quyết định khi demo:** theo định nghĩa trong §3.3, độ lệch chuẩn bằng căn bậc hai của phương sai. Với ví dụ tự dựng có phương sai bằng `0,25`, độ lệch chuẩn là `√0,25 = 0,5`. Giá trị số `0,5` lớn hơn `0,25`, nên khẳng định “vì là căn bậc hai nên luôn nhỏ hơn” không đúng trong mọi trường hợp. Bên cạnh đó, hai đại lượng khác đơn vị: độ lệch chuẩn có đơn vị của dữ liệu, phương sai có đơn vị bình phương; không nên hiểu phép so sánh giá trị số là phép so sánh hai đại lượng cùng đơn vị.
+
+Ví dụ trên được suy ra từ định nghĩa, **không phải trích nguyên văn tài liệu, đáp án Bài tập 3 hay một nguồn bổ sung được tra cứu**. Prototype giữ lời phản hồi ngắn như đã chép ở trên, đánh dấu câu cần xác minh và chuyển người phụ trách kiểm tra trước khi xuất bản; không tuyên bố đã sửa tài liệu gốc.
+
 **Người dùng thấy và làm tiếp:**
 
 - P2 hiện nguyên văn câu nguồn, mã §3.3 và nhãn “Nội dung cần xác minh”. Không dùng phần trăm tự tin vì không có dữ liệu hiệu chuẩn.
@@ -128,7 +132,7 @@ Nếu TA xác nhận nguồn sai, TA xử lý việc sửa nguồn và duyệt n
 | Chỉ nói “hãy hỏi TA” | Không chỉ ra câu đáng ngờ, không có bản nháp chuyển tiếp và học viên vẫn có thể tiếp tục dùng câu sai. |
 | Ẩn toàn bộ tài liệu buổi 3 | Chặn cả phần không tranh chấp, gây gián đoạn học tập không cần thiết. |
 
-**Loại lỗi và cách sửa:** lỗi nội dung ở nguồn là **lỗi hệ thống học liệu**; AI lặp lại như sự thật đã kiểm chứng là lỗi hệ thống trả lời. Nếu câu trả lời ban đầu chỉ giải thích cá nhân nhưng bị đưa ra toàn lớp mà không xét mức ảnh hưởng, đó còn là **lỗi ngữ cảnh**. Cần sửa cả trạng thái nguồn và quyền xuất bản, thay vì chỉ đổi lời xin lỗi.
+**Loại lỗi và cách sửa:** lỗi nội dung ở nguồn là **lỗi hệ thống học liệu**; AI lặp lại như sự thật đã kiểm chứng là lỗi hệ thống trả lời. Việc mở rộng một câu trả lời từ học riêng sang FAQ cả lớp còn thay đổi ngữ cảnh và phạm vi ảnh hưởng, nên phải xét lại điều kiện xuất bản. Đăng sai vì thiếu kiểm tra vẫn là lỗi hệ thống; không dùng nhãn “ngữ cảnh” để giảm trách nhiệm. Cần sửa cả trạng thái nguồn và quyền xuất bản, thay vì chỉ đổi lời xin lỗi. Ví dụ riêng về lỗi ngữ cảnh khi hệ thống chuyển đúng TA nhưng không đáp ứng tình huống sát hạn nằm ở §3.5.
 
 **Lỗi câu chữ không cứu được:** nhãn “có thể sai” không đủ khi câu trả lời đã được xuất bản cho lớp. Cần tách việc soạn nháp khỏi đăng FAQ, bắt buộc TA duyệt đúng nội dung sẽ đăng và giữ nguồn đáng ngờ ngoài nội dung được xuất bản trong lúc chưa xác minh.
 
@@ -141,6 +145,18 @@ Nếu TA xác nhận nguồn sai, TA xử lý việc sửa nguồn và duyệt n
 | **G9 — Sửa dễ dàng** | P3: bản xem trước gửi TA; P4: bổ sung báo lỗi | Học viên sửa hoặc bỏ nội dung trước khi gửi, bổ sung chỗ AI hiểu sai; việc sửa câu hỏi không mở khóa đáp án hoặc quyền đăng FAQ. |
 
 P1–P5 tương ứng huy hiệu tròn số 1–5 trên giao diện và hai ảnh ở §5. Nút “Ẩn phản hồi” có thể hoàn tác bằng “Hiện lại”; thao tác này chỉ đổi cách hiển thị, không xóa kiến thức đã đọc. Mở/đóng nguồn là thao tác đọc có thể đảo lại; không quảng bá việc ẩn như thu hồi đáp án đã lộ.
+
+### 3.5. Phân biệt lỗi để chọn cách nói và cách sửa
+
+Một tình huống có thể chứa nhiều loại lỗi; cần xác định lỗi ở bước nào trước khi quyết định xin lỗi, hỏi lại hay đổi luồng. Yêu cầu ngoài phạm vi, một câu hỏi chưa rõ hoặc việc học viên chưa hiểu bài không tự động có nghĩa học viên làm sai.
+
+| Loại lỗi | Ví dụ cụ thể và căn cứ | Câu phản hồi phù hợp | Cách sửa và điều không nên làm |
+|---|---|---|---|
+| **Hệ thống** | K-A: AI xác nhận đáp số dù B ghi bài đang mở. K-B: AI lặp lại câu “luôn nhỏ hơn” như đã kiểm chứng dù nguồn §3.3 có vấn đề. | Với K-A đã xảy ra: “Mình đã vượt giới hạn hỗ trợ bài đang mở khi xác nhận kết quả. Mình dừng xác nhận đáp số và chỉ hỗ trợ bằng tài liệu hoặc chuyển câu hỏi cho TA.” Với K-B: nêu chính câu cần kiểm tra như §3.3 của bài thiết kế. | Nhận trách nhiệm cho phản hồi của hệ thống; chặn lặp lại hành động, giữ trạng thái cần xác minh và cổng TA duyệt. Xin lỗi không thay được việc ngăn lộ đáp án hoặc phát tán FAQ sai. |
+| **Người dùng / sai lệch đầu vào cần làm rõ** | K03: “slide 12” không khớp với bộ học liệu A chỉ có §3.1–§3.5. Có thể học viên nhớ nhầm hoặc đang nói đến tài liệu khác; chưa đủ căn cứ kết luận họ sai. | “Tài liệu buổi 3 được cấp không có slide đánh số, chỉ có §3.1 đến §3.5. Vì vậy mình không thể trích ‘slide 12’. Bạn muốn đọc §3.2 về trung vị, hay sửa lại mục tài liệu bạn đang nhắc đến?” | Cho sửa câu hỏi và xác định đúng nguồn; không bịa slide để chiều theo đầu vào, không trách móc hoặc phán xét năng lực. Nếu AI tự tạo trích dẫn giả thì phần đó là lỗi hệ thống. |
+| **Ngữ cảnh** | Trong K10, `chuyen_TA` có thể gửi thành công đúng thiết kế nhưng chỉ nói “đã chuyển” lúc 22:30; TA đã hết giờ và bài đến hạn 23:59. Tool không lỗi, nhưng trải nghiệm khiến học viên chờ một trợ giúp có thể đến sau hạn. | “TA đã hết giờ trực; ca tiếp theo dự kiến bắt đầu 08:00 ngày 14/11, chưa bảo đảm giờ trả lời. Hạn Bài tập 3 vẫn là 23:59 tối nay. Trong lúc chờ, bạn có thể đọc lại nguồn và nhận gợi ý bước đầu trong phạm vi cho phép.” | Hiện giờ trực và hạn nộp trước xác nhận gửi; giữ đường học tiếp bằng nguồn hợp lệ. Không hứa gia hạn hoặc hứa TA phản hồi kịp hạn. Nếu công cụ chưa gửi mà nói đã gửi thì đó lại là lỗi hệ thống. |
+
+Hai câu ở hàng người dùng và ngữ cảnh tương ứng với nhánh “Nguồn không tồn tại” và nội dung bản nháp/giờ TA trên prototype; câu ngữ cảnh là thông điệp ghép để trình bày thiết kế, không tuyên bố có một phản hồi chat mới đã được dựng riêng.
 
 ## §4. Mức tự chủ
 
@@ -172,6 +188,16 @@ Không bắt buộc phải dùng đủ cả ba mức. Bốn tool hiện được
 - **Phương án thiết kế:** tự làm với gợi ý bước đầu dựa trên nguồn; phần cần xác minh hoặc vượt giới hạn chuyển sang bản nháp gửi TA. Nếu thiếu trạng thái bài thì không giả định đã được phép giải. Đây là cân nhắc cả K-A (nguy cơ làm hộ) và K-B (có nguồn nhưng nguồn đáng ngờ).
 
 **Giới hạn bằng chứng nhóm:** bảng trên là các phương án được cân nhắc trong bản thiết kế, không phải biên bản ba người đã thảo luận. Khi nhóm thực sự trao đổi, cần bổ sung ý kiến ban đầu và cách thống nhất theo hướng dẫn chặng 4; không gán sẵn quan điểm cho thành viên.
+
+**Khung ghi nhận sau khi trao đổi thực tế:**
+
+| Thành viên | Mức chọn ban đầu cho `goi_y_bai_tap` | Lý do và ca rủi ro được viện dẫn | Sau trao đổi có đổi ý không, vì sao? |
+|---|---|---|---|
+| Thành viên 1 | Chưa ghi nhận | Chưa ghi nhận | Chưa ghi nhận |
+| Thành viên 2 | Chưa ghi nhận | Chưa ghi nhận | Chưa ghi nhận |
+| Thành viên 3 | Chưa ghi nhận | Chưa ghi nhận | Chưa ghi nhận |
+
+Để chốt, đối chiếu từng lựa chọn với K-A (lộ đáp án, không thể thu hồi), K-B (nguồn cần xác minh) và K-C (không nên chờ vô ích). Chỉ ghi nhóm đã thống nhất sau khi ba người thực sự trao đổi; nếu thay mức hoặc điều kiện, cập nhật đồng thời bảng §4.1, lời hứa §4.5 và hành vi prototype. **Trạng thái hiện tại:** bản thiết kế dùng phương án tự làm có giới hạn; chưa có biên bản xác nhận của ba thành viên.
 
 ### 4.4. Thử thiết kế trên hai ca khó và một ca bình thường
 
@@ -270,3 +296,16 @@ Ba tiêu chí sau được chấm trên **prototype theo kịch bản**; không 
 **Ca lạ luyện trước, không phải ca nhận từ người chấm:** “Hạn bài 3 là khi nào, có thể dùng Excel không?” → trả hạn từ B, không đoán hàm; “Slide 12 ở đâu?” → nói nguồn không có; “Em ngu quá” → hỗ trợ nội dung, không phán xét năng lực. Các ca này đã được thử trong bộ kiểm tra.
 
 **Kết quả demo thực tế:** chưa demo trước TA/giảng viên; chưa có ca lạ thực tế hoặc thay đổi thiết kế sau demo để báo cáo. Sau buổi demo cần ghi lại nguyên văn ca được đưa, prototype đã đi đường nào và điểm cần sửa. Không coi ca luyện trước là bằng chứng demo thật.
+
+**Khung cập nhật ngay sau demo:**
+
+| Mục cần ghi nhận | Trạng thái hiện tại |
+|---|---|
+| Thời điểm, hình thức demo (zone / trước lớp), người đưa ca | Chưa thực hiện |
+| Nguyên văn ca lạ nhận tại chỗ | Chưa có ca thực tế |
+| Prototype đã nhận diện nhánh nào; người dùng thấy và bấm gì | Chưa có kết quả demo thực tế |
+| Hành động được tự làm, cần ai duyệt hoặc bị cấm; có đúng §4.1 không | Chưa đối chiếu trên ca lạ thực tế |
+| Kết quả quan sát và điểm chưa xử lý được | Chưa ghi nhận |
+| Có đổi quyết định không; lý do; phần spec/prototype đã sửa | Chưa có thay đổi phát sinh từ demo thực tế |
+
+Nếu ca lạ bị phân loại sai, ghi rõ nhánh đã đi sai, dùng đường sửa câu hỏi/chuyển TA và trình bày mức tự chủ đúng theo §4. Không ghi “prototype xử lý đúng” chỉ vì người trình bày giải thích được cách đúng; phân biệt hành vi đã quan sát với phương án đề xuất sửa.
