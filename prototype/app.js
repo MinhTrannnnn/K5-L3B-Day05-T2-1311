@@ -16,12 +16,13 @@ const PROMPTS = {
   missing:'Slide 12 nói gì về trung vị? Trích slide đó giúp em.'
 };
 const RESPONSES = {
-  open:{kind:'open',source:'3.2',status:'Chỉ gợi ý bước đầu',text:'Bài tập 3 đang mở đến 23:59 ngày 13/11/2026 theo trang khóa học. Mình có thể gợi ý bước đầu, nhưng không xác nhận đáp số hoặc viết nhận xét để bạn nộp. Theo §3.2, bạn hãy bắt đầu bằng cách sắp xếp dữ liệu tăng dần. Bạn muốn đọc lại định nghĩa trung vị hay gửi câu hỏi cho TA?',warning:null},
+  open:{kind:'open',source:'3.2',status:'Chỉ gợi ý bước đầu',text:'Bài tập 3 đang mở đến 23:59 ngày 13/11/2026 theo trang khóa học. Mình có thể gợi ý bước đầu, nhưng không xác nhận đáp số hoặc viết nhận xét để bạn nộp. Theo §3.2, bạn hãy bắt đầu bằng cách sắp xếp dữ liệu tăng dần. Bạn muốn đọc lại định nghĩa trung vị hay gửi câu hỏi cho TA?',extraSource:'B',warning:null},
   source:{kind:'source',source:'3.3',status:'Cần TA xác minh',text:'§3.3 có câu “độ lệch chuẩn luôn nhỏ hơn phương sai”. Câu này cần TA kiểm tra: độ lệch chuẩn có cùng đơn vị với dữ liệu, còn phương sai có đơn vị bình phương, nên không thể dùng riêng câu “vì là căn bậc hai” để kết luận “luôn nhỏ hơn”. Mình chưa coi câu này là kết luận đã được xác minh và chưa đăng nó lên FAQ. Bạn có muốn xem trước câu hỏi gửi TA không?',warning:'Câu “luôn nhỏ hơn” trong §3.3 cần được kiểm tra. Trích đúng nguồn không bảo đảm nguồn đúng.'},
   concept:{kind:'concept',source:'3.2',status:'Có căn cứ trong tài liệu',text:'Theo §3.1, trung bình cộng là tổng các giá trị chia cho số giá trị và bị kéo mạnh bởi ngoại lai. Theo §3.2, trung vị là giá trị đứng giữa sau khi sắp xếp; với số lượng chẵn, lấy trung bình hai giá trị đứng giữa. Trung vị ít bị ảnh hưởng bởi ngoại lai, nên thường dùng cho dữ liệu lệch như thu nhập hay giá nhà.',extraSource:'3.1',warning:null},
   missing:{kind:'missing',source:null,status:'Không tìm thấy nguồn',text:'Tài liệu buổi 3 được cấp không có slide đánh số, chỉ có §3.1 đến §3.5. Vì vậy mình không thể trích “slide 12”. Bạn muốn đọc §3.2 về trung vị, hay sửa lại mục tài liệu bạn đang nhắc đến?',warning:null},
   ambiguous:{kind:'ambiguous',source:null,status:'Cần làm rõ câu hỏi',text:'Bạn đang hỏi về phương sai hay độ lệch chuẩn? Bạn có thể viết lại thuật ngữ hoặc chọn mục tài liệu. Mình chưa đoán ý để trả lời như đã chắc.',warning:null},
   deadline:{kind:'deadline',source:'B',status:'Lấy từ trang khóa học',text:'Theo trang khóa học, Bài tập 3 có hạn 13/11/2026 lúc 23:59 và đang mở. Tài liệu được cấp không có hướng dẫn hàm Excel, nên mình không đoán tên hàm. Bạn có thể soạn câu hỏi gửi TA; giờ trực là 08:00–22:00 và hiện đã hết giờ trực.',warning:null},
+  extension:{kind:'extension',source:'B',status:'Hạn nộp không thay đổi',text:'Theo trang khóa học, Bài tập 3 vẫn đến hạn 13/11/2026 lúc 23:59. Mình không có quyền gia hạn hoặc xác nhận nộp muộn. Nếu bạn cần xin gia hạn, hãy liên hệ giảng viên. Việc gửi câu hỏi cho TA không làm đổi hạn nộp.',warning:null},
   late:{kind:'late',source:'B',status:'Bài đã hết hạn, có đáp án',text:'Theo trang khóa học, Bài tập 2 đã hết hạn ngày 06/11/2026 và công bố đáp án ngày 07/11. Với các giá trị 4, 8, 6, 5, 7, tổng là 30; chia cho 5 được 6. Đây cũng là đáp án đã công bố. Quy tắc tính dựa trên §3.1.',extraSource:'3.1',warning:null},
   future:{kind:'future',source:'B',status:'Chưa có tài liệu buổi này',text:'Theo đề cương trang khóa học, p-value thuộc buổi 7 “Kiểm định giả thuyết và p-value”; hiện khóa mới mở buổi 1–3. Mình chưa có nội dung buổi 7 để giảng hoặc trích dẫn. Bạn muốn soạn câu hỏi để giảng viên hướng dẫn thêm không?',warning:null},
   self:{kind:'self',source:'3.2',status:'Hỗ trợ theo nội dung',text:'Mình không kết luận năng lực của bạn từ một chỗ chưa hiểu. Bạn đang vướng ở thuật ngữ hay cách làm? Theo §3.2, trung vị bắt đầu từ việc sắp xếp dữ liệu tăng dần; mình có thể cùng bạn đọc lại định nghĩa, hoặc bạn có thể sửa câu hỏi để chỉ rõ phần đang kẹt.',warning:null},
@@ -55,11 +56,12 @@ function showSource(id,extra){
 
 function classify(question){
   const q=normalize(question);
-  if(/han nop|excel|ham gi|gia han/.test(q)&&!/xac nhan|dap so|giai ho|viet.*nhan xet/.test(q))return 'deadline';
+  if(/gia han|nop muon|mai nop|nop.*ngay mai/.test(q))return 'extension';
+  if(/han nop|excel|ham gi/.test(q)&&!/xac nhan|dap so|giai ho|viet.*nhan xet/.test(q))return 'deadline';
   if(/bai\s*(tap\s*)?3|9,\s*10,\s*10|phan\s*b|viet.*nhan xet|nhan xet.*nop/.test(q)) return 'open';
   if(/luon nho|tai lieu.*sai|nguon.*sai|3[.,]3|phuong sai|do lech chuan/.test(q)&&!/excel|ham gi|han nop/.test(q))return 'source';
   if(/slide/.test(q))return 'missing';
-  if(/han nop|excel|ham gi|gia han/.test(q))return 'deadline';
+  if(/han nop|excel|ham gi/.test(q))return 'deadline';
   if(/p-value|p value|buoi\s*[4-9]|buoi\s*10/.test(q))return 'future';
   if(/bai\s*(tap\s*)?2/.test(q))return 'late';
   if(/ngu qua|kem qua|dot|ngu that|em ngu|minh ngu/.test(q))return 'self';
@@ -102,7 +104,10 @@ function openDraft(type='ta'){
   const text=kind==='source'?'Nhờ TA kiểm tra §3.3: câu “độ lệch chuẩn luôn nhỏ hơn phương sai” có hợp lý không? Em cần làm rõ kết luận này trước khi dùng hoặc chia sẻ cho lớp.':kind==='open'?'Em cần hỗ trợ cách bắt đầu Bài tập 3 theo §3.2, không yêu cầu đáp số hoặc nhận xét để nộp.':userMessage?.text||'Em cần TA hướng dẫn thêm về tài liệu buổi 3.';
   $('draft-title').innerHTML='<span class="annotation">3</span> '+(type==='faq'?'Xem trước đề xuất FAQ':'Xem trước câu hỏi gửi TA');
   $('draft-text').value=text;
-  $('draft-meta').textContent=`Nguồn kèm theo: ${state.current?.source?sourceLabel(state.current.source):'chưa có nguồn xác định'} · Bài tập 3 đang mở.`;
+  const source = state.current?.source;
+  $('draft-meta').innerHTML = source
+    ? `Nguồn kèm theo: ${esc(sourceLabel(source))}<details><summary>Đọc đoạn nguồn sẽ gửi</summary><p>${esc(SOURCES[source].text)}</p></details>`
+    : 'Chưa có nguồn xác định để đính kèm.';
   $('draft-error').textContent='';$('confirm-draft').disabled=false;
   $('draft-dialog').showModal();$('draft-text').focus();
 }
@@ -113,10 +118,10 @@ function submitDraft(event){
   if($('simulate-error').checked){$('draft-error').textContent='Gửi không thành công. Bản nháp vẫn còn; TA chưa nhận câu hỏi. Tắt mô phỏng lỗi rồi thử lại.';return;}
   const kind=classify(text)==='open'?'open':state.current?.kind||'unknown';
   const serial=state.tickets.reduce((max,t)=>Math.max(max,Number(t.id.split('-')[1])||0),0)+1;
-  const ticket={id:'TA-'+String(serial).padStart(3,'0'),kind,type:kind==='open'?'ta':state.draftType,text,source:state.current?.source||null,status:'pending',answer:'',approved:false};
+  const ticket={id:'TA-'+String(serial).padStart(3,'0'),kind,type:kind==='open'?'ta':state.draftType,text,source:state.current?.source||null,status:'pending',answer:'',reply:null,approved:false};
   if(ticket.type==='faq')ticket.answer=RESPONSES.concept.text;
   state.tickets.push(ticket);state.selectedTicket=ticket.id;save();closeDraft();renderQueue();
-  $('ticket-status').textContent=`${ticket.id} đã vào hàng chờ (mô phỏng). Chưa có người đọc hoặc giờ phản hồi bảo đảm.`;
+  syncLearnerStatus();
   toast(`${ticket.id}: đã vào hàng chờ trong bản mẫu.`);
 }
 function setView(view){
@@ -128,8 +133,11 @@ function setView(view){
 function syncLearnerStatus(){
   const t=state.tickets.at(-1);
   $('ticket-status').textContent=t?`${t.id} · ${t.status==='pending'?'Đã vào hàng chờ, chưa có người đọc hoặc giờ phản hồi bảo đảm.':t.status==='published'?'TA đã duyệt và đăng FAQ trong bản mẫu.':'TA đã lưu phản hồi trong bản mẫu.'}`:'Chưa có câu hỏi nào được gửi.';
-  $('ta-reply').hidden=!t||t.status==='pending';
-  $('ta-reply').textContent=t&&t.status!=='pending'?`Phản hồi TA (mô phỏng): ${t.answer}`:'';
+  // Keep the last confirmed reply separate from the TA's editable draft.
+  const published = state.published.find(item => item.id === t?.id);
+  const reply = t?.reply ?? published?.text;
+  $('ta-reply').hidden = !reply;
+  $('ta-reply').textContent = reply ? `Phản hồi TA (mô phỏng): ${reply}` : '';
 }
 function renderQueue(){
   const pending=state.tickets.filter(t=>t.status==='pending').length;
@@ -146,13 +154,14 @@ function renderReview(){
   $('review-panel').innerHTML=`<p class="eyebrow">${esc(t.id)} · CHỈ ĐƯỢC GỬI SAU KHI HỌC VIÊN XÁC NHẬN</p><h2>${t.kind==='source'?'Kiểm tra học liệu trước khi chia sẻ':'Xem câu hỏi, giữ đúng giới hạn'}</h2><p class="muted">Nhận vào hàng chờ lúc 22:30 ngày 13/11/2026 · mô phỏng</p><div class="request-content">${esc(t.text)}</div>${warning}<div class="source-card"><span class="annotation">2</span><p class="eyebrow">NGUỒN CẦN KIỂM TRA</p>${sourceMarkup(t.source)}</div><label for="ta-answer">Phản hồi của TA${canFAQ?' / bản nháp FAQ':''}</label><textarea id="ta-answer" rows="4" maxlength="3000" placeholder="TA viết nội dung đã kiểm tra; AI không tự điền kết luận mới.">${esc(t.answer)}</textarea><label class="approve-label"><input type="checkbox" id="ta-approve" ${t.approved?'checked':''}><span>Tôi đóng vai TA: đã kiểm tra nguồn và duyệt đúng phiên bản nội dung đang hiển thị${canFAQ?' để chia sẻ cho lớp':''}.</span></label><div class="review-actions"><button id="reply-ticket" class="secondary" ${!t.approved||!t.answer.trim()?'disabled':''}>Lưu phản hồi TA</button>${canFAQ?`<button id="publish-faq" class="primary" ${!t.approved||!t.answer.trim()||state.published.some(f=>f.id===t.id)?'disabled':''}><span class="annotation">5</span> Duyệt và đăng FAQ</button>`:'<span class="pill">Không đăng câu hỏi bài đang mở lên FAQ</span>'}</div><p class="muted" style="margin-top:12px;font-size:10px">Sửa nội dung sẽ hủy phê duyệt cũ. Không duyệt thì không đăng. Đây là thao tác đóng vai, không có xác thực TA thật.</p>`;
   $('ta-answer').addEventListener('input',()=>{t.answer=$('ta-answer').value;t.approved=false;$('ta-approve').checked=false;save();updateReviewButtons(t);});
   $('ta-approve').addEventListener('change',()=>{t.approved=$('ta-approve').checked;save();updateReviewButtons(t);});
-  $('reply-ticket').addEventListener('click',()=>{if(!t.approved||!t.answer.trim())return;t.status=state.published.some(f=>f.id===t.id)?'published':'replied';save();renderQueue();toast('Đã lưu phản hồi TA trong bản mẫu.');});
+  $('reply-ticket').addEventListener('click',()=>{if(!t.approved||!t.answer.trim())return;t.reply=t.answer.trim();t.status=state.published.some(f=>f.id===t.id)?'published':'replied';save();renderQueue();toast('Đã lưu phản hồi TA trong bản mẫu.');});
   $('publish-faq')?.addEventListener('click',()=>publish(t));
 }
 function updateReviewButtons(t){$('reply-ticket').disabled=!t.approved||!t.answer.trim();if($('publish-faq'))$('publish-faq').disabled=!t.approved||!t.answer.trim()||state.published.some(f=>f.id===t.id);}
 function publish(t){
   if(!(t.kind==='source'||t.type==='faq')||!t.approved||!t.answer.trim()||state.published.some(f=>f.id===t.id))return;
-  state.published.push({id:t.id,title:t.kind==='source'?'Làm rõ nội dung §3.3':'Trung vị và trung bình cộng',text:t.answer,source:t.source});t.status='published';save();renderQueue();toast('TA đã duyệt: FAQ được đăng trong bản mẫu.');
+  t.reply = t.answer.trim();
+  state.published.push({id:t.id,title:t.kind==='source'?'Làm rõ nội dung §3.3':'Trung vị và trung bình cộng',text:t.reply,source:t.source});t.status='published';save();renderQueue();toast('TA đã duyệt: FAQ được đăng trong bản mẫu.');
 }
 function renderPublished(){
   $('published-list').innerHTML=state.published.length?state.published.map(f=>`<article class="published-card"><h3>${esc(f.title)}</h3><p>${esc(f.text)}</p><p class="published-meta">${esc(f.id)} · ${esc(sourceLabel(f.source))} · TA đã duyệt (mô phỏng)</p><button data-unpublish="${esc(f.id)}">Gỡ FAQ đã đăng</button></article>`).join(''):'<div class="empty-state">Chưa có FAQ nào được đăng. Bản nháp không tự trở thành bài đăng khi chờ lâu.</div>';
@@ -172,6 +181,21 @@ $('draft-ta').addEventListener('click',()=>openDraft());$('report-source').addEv
 $('draft-form').addEventListener('submit',submitDraft);$('close-dialog').addEventListener('click',closeDraft);$('cancel-draft').addEventListener('click',closeDraft);
 $('learner-tab').addEventListener('click',()=>setView('learner'));$('ta-tab').addEventListener('click',()=>setView('ta'));
 $('queue-list').addEventListener('click',e=>{const b=e.target.closest('[data-ticket]');if(b){state.selectedTicket=b.dataset.ticket;renderQueue();}});
-$('published-list').addEventListener('click',e=>{const b=e.target.closest('[data-unpublish]');if(!b)return;state.published=state.published.filter(f=>f.id!==b.dataset.unpublish);const ticket=state.tickets.find(t=>t.id===b.dataset.unpublish);if(ticket){ticket.status='replied';ticket.approved=false;}save();renderQueue();toast('Đã gỡ FAQ trong bản mẫu. Gỡ bài không thu hồi được nội dung người khác đã đọc.');});
+$('published-list').addEventListener('click', event => {
+  const button = event.target.closest('[data-unpublish]');
+  if (!button) return;
+  const id = button.dataset.unpublish;
+  const published = state.published.find(item => item.id === id);
+  const ticket = state.tickets.find(item => item.id === id);
+  if (ticket) {
+    ticket.reply ??= published?.text;
+    ticket.status = ticket.reply ? 'replied' : 'pending';
+    ticket.approved = false;
+  }
+  state.published = state.published.filter(item => item.id !== id);
+  save();
+  renderQueue();
+  toast('Đã gỡ FAQ trong bản mẫu. Gỡ bài không thu hồi được nội dung người khác đã đọc.');
+});
 $('reset-demo').addEventListener('click',()=>{state.messages=[];state.tickets=[];state.published=[];state.current=null;state.intent=null;state.selectedTicket=null;$('simulate-error').checked=false;save();renderMessages();renderQueue();showSource('3.2');updateFAQState();$('ticket-status').textContent='Chưa có câu hỏi nào được gửi.';document.querySelectorAll('[data-scenario]').forEach(b=>b.classList.remove('selected'));setView('learner');toast('Đã xóa dữ liệu bản mẫu.');});
 showSource('3.2');updateFAQState();renderQueue();syncLearnerStatus();
