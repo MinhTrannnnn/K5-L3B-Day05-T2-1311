@@ -4,8 +4,8 @@
 
 | Họ và Tên | Mã Học Viên | Phần phụ trách / việc đã làm cần xác nhận |
 |---|---|---|
-| Trần Quang Minh | 2A202603929 | Phụ trách §3–§4: UX cho K-A/K-B, câu phản hồi AI, phân loại lỗi, nguyên tắc HAX, mức tự chủ cho bốn tool và lập luận theo hậu quả khi sai; trình bày các quyết định UX và quyền tự chủ khi demo. |
-| Nguyễn Hải Quang | 2A202603936 | Phụ trách §1–§2 và §6: phạm vi, bảng 12 kịch bản, lý do chọn hai ca đắt nhất, ba tiêu chí Pass/Fail; rà soát kết quả kiểm tra theo tiêu chí; trình bày bài toán, rủi ro và tiêu chí đánh giá khi demo. |
+| Trần Quang Minh | 2A202603929 | Phụ trách §1–§2 và §6: phạm vi, bảng 12 kịch bản, lý do chọn hai ca đắt nhất, ba tiêu chí Pass/Fail; rà soát kết quả kiểm tra theo tiêu chí; trình bày bài toán, rủi ro và tiêu chí đánh giá khi demo. |
+| Nguyễn Hải Quang | 2A202603936 | Phụ trách §3–§4: UX cho K-A/K-B, câu phản hồi AI, phân loại lỗi, nguyên tắc HAX, mức tự chủ cho bốn tool và lập luận theo hậu quả khi sai; trình bày các quyết định UX và quyền tự chủ khi demo. |
 | Mai Danh Hiếu | 2A202603948 | Phụ trách §5 và prototype/: hai màn hình học viên/TA, tương tác gửi/duyệt FAQ, ảnh đánh số, hướng dẫn chạy và bộ kiểm tra trình duyệt; vận hành prototype và ghi nhận ca lạ tại §7 khi demo. |
 
 **Ghi nhận đóng góp:** bảng trên phân bổ trách nhiệm rà soát và hoàn thiện bản nháp được xây dựng với AI hỗ trợ. Mỗi thành viên cần thực hiện, hiểu và xác nhận phần việc của mình trước khi ghi nhận là việc đã làm; bảng chưa xác nhận cả ba đã hoàn tất các phần được giao. Cả nhóm cùng xem lại hai ca rủi ro chính, mức tự chủ và thử demo để các phần thống nhất.
@@ -283,7 +283,7 @@ Ba tiêu chí sau được chấm trên **prototype theo kịch bản**; không 
 
 ## §7. Demo
 
-**Phần trình bày dự kiến:** Nguyễn Hải Quang giới thiệu lát cắt, ca rủi ro và tiêu chí đánh giá; Trần Quang Minh giải thích UX, HAX và mức tự chủ; Mai Danh Hiếu thao tác prototype, minh họa trạng thái gửi/duyệt và ghi lại ca lạ. Cả ba cùng trả lời về phần mình phụ trách, đồng thời hiểu luồng chung. Đây là phân công chuẩn bị, chưa phải ghi nhận demo đã diễn ra.
+**Phần trình bày dự kiến:** Trần Quang Minh giới thiệu lát cắt, ca rủi ro và tiêu chí đánh giá; Nguyễn Hải Quang giải thích UX, HAX và mức tự chủ; Mai Danh Hiếu thao tác prototype, minh họa trạng thái gửi/duyệt và ghi lại ca lạ. Cả ba cùng trả lời về phần mình phụ trách, đồng thời hiểu luồng chung. Đây là phân công chuẩn bị, chưa phải ghi nhận demo đã diễn ra.
 
 **Kịch bản trình bày khoảng 4 phút:**
 
